@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+<style type="text/css">
+    
+</style>
+
+<body>
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script type="text/javascript">
+        var width = 460,
+            height = 500;
+
+        var svg = d3.select("body").append("svg")
+            .attr("width", width)
+            .attr("height", height);
+
+        d3.csv("candy.csv", function(d) {
+            d.age = +d.age;
+            return d;
+        });
+    </script>
+
+</body>
+
+</html>
