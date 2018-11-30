@@ -1,28 +1,46 @@
 <!DOCTYPE html>
 <html>
-
 <head>
+  <link rel="stylesheet" href="style.css">
+	<meta charset="UTF-8">
+	<title>Halloween Candy Scaries</title>
 
+	<!-- <script src="http://d3js.org/d3.v3.min.js"></script>
+  <script src="http://d3plus.org/js/d3plus.js"></script> -->
+  <script src="//d3plus.org/js/d3.js"></script>
+  <script src="//d3plus.org/js/d3plus.js"></script>
 </head>
-<style type="text/css">
-    
-</style>
+
 
 <body>
-    <script src="https://d3js.org/d3.v3.min.js"></script>
-    <script type="text/javascript">
-        var width = 460,
-            height = 500;
+  <h1> Halloween Candy Scaries </h1>
+  <h2> Candy Popularity by State </h2>
 
-        var svg = d3.select("body").append("svg")
-            .attr("width", width)
-            .attr("height", height);
+  <div id = "treemap"></div>
 
-        d3.csv("candy.csv", function(d) {
-            d.age = +d.age;
-            return d;
-        });
-    </script>
+  <div id = "athing">
+    <select id = "dropdown">
+      <option value="Twix">Twix</option>
+      <option value="green">Green</option>
+      <option value="purple">Purple</option>
+    </select>
+  </div>
+
+  <script src="treemap.js"></script>
+
+  <div id = "crystalball">
+    <h2> The Prevalence of Alcohol in Candy Opinions </h2>
+
+    <div>
+      <label>Type a search term to read a comment:</label>
+      <input type = "text"
+         id = "searchterm"
+         value = "" />
+    </div>
+
+  </div>
+
+  <script src="crystalball.js"></script>
 
 </body>
 
