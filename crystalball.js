@@ -1,42 +1,52 @@
+var commentArray = [];
+var visibleArray = [];
+
 function crystalstart() {
   var alldacomments;
-  var commentArray = [];
+  var lowercaseStuff;
+  var stringBuilder;
+  var randNum;
 
   console.log("Crystalball is running");
 
   var crystalball = document.getElementById('crystalball');
 
-  d3.select(crystalball)
-      .append('p')
-      .append('button')
-      .text('Search comments!')
-      .on('click', function() {
-        var usersearch = document.getElementById("searchterm").value;
-        console.log(usersearch);
-
-      });
-
   d3.csv("candy.csv", function(d) {
     d.forEach(function(element) {
       if ((element.OTHER_COMMENTS) != "") {
-        commentArray.push(element.OTHER_COMMENTS);
+        commentArray.push(element.OTHER_COMMENTS.toLowerCase());
       }
     });
 
-    console.log(commentArray);
+    d3.select(crystalball)
+        .append('p')
+        .append('button')
+        .text('Get a random comment!')
+        .on('click', function() {
+          var usersearch = (document.getElementById("searchterm").value).toLowerCase();
+          console.log(usersearch);
+          commentSearcher(usersearch);
+          console.log(visibleArray);
+
+          randNum = Math.floor(Math.random() * ((visibleArray.length)) + 0);
+          console.log(randNum);
+
+          document.getElementById("results").innerHTML = "These are the results: " + visibleArray[randNum] ;
+        });
 
 
   });
 
 }
 
-// function commentSearcher(aComment) {
-//   commentArray.forEach(function(element) {
-//     if (element.includes(aComment)) {
-//       console.log("Found a match!");
-//       return;
-//     } else {
-//
-//     }
-//   });
-// }
+function commentSearcher(aComment) {
+  //clear the array
+  visibleArray = [];
+
+  commentArray.forEach(function(element) {
+    if (element.includes(aComment)) {
+      visibleArray.push(element);
+    } else {
+    }
+  });
+}

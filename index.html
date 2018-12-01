@@ -1,50 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<<<<<<< HEAD
-  <link rel="stylesheet" href="style.css">
-	<meta charset="UTF-8">
-	<title>Halloween Candy Scaries</title>
-
-	<!-- <script src="http://d3js.org/d3.v3.min.js"></script>
-  <script src="http://d3plus.org/js/d3plus.js"></script> -->
-  <script src="//d3plus.org/js/d3.js"></script>
-  <script src="//d3plus.org/js/d3plus.js"></script>
-</head>
-
-
-<body>
-  <h1> Halloween Candy Scaries </h1>
-  <h2> Candy Popularity by State </h2>
-
-  <div id = "treemap"></div>
-
-  <div id = "athing">
-    <select id = "dropdown">
-      <option value="Twix">Twix</option>
-      <option value="green">Green</option>
-      <option value="purple">Purple</option>
-    </select>
-  </div>
-
-  <script src="treemap.js"></script>
-
-  <div id = "crystalball">
-    <h2> The Prevalence of Alcohol in Candy Opinions </h2>
-
-    <div>
-      <label>Type a search term to read a comment:</label>
-      <input type = "text"
-         id = "searchterm"
-         value = "" />
-    </div>
-
-  </div>
-
-  <script src="crystalball.js"></script>
-=======
-        <meta charset="utf-8"> 
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
         <script src="https://d3js.org/d3.v3.min.js"></script>
+        <script src="//d3plus.org/js/d3plus.js"></script>
         <script src="https://unpkg.com/topojson@3"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
         <script src="liquidFillGauge.js"></script>
@@ -77,21 +37,100 @@
 </style>
 
 <body>
-    
+    <h1> Halloween Candy Scaries </h1>
+
     <div id="tooltip-container"></div>
 
     <div id="canvas-svg">
         <script src="choropleth.js"></script>
     </div>
-    
+
 
     <div id="fill">
         <svg id="fillGauge" width="95%" height="250"></svg>
         <script src="opinionGauge.js"></script>
     </div>
-    
-    
->>>>>>> 46a81d06fd95049f90cd0cf493b9798e77efc064
+
+    <h2> Candy Popularity by State </h2>
+
+    <div id = "treemap"></div>
+
+    <div id = "athing">
+      <select id = "dropdown">
+        <option value="Any_full_sized_candy_bar">Any Full Sized Candy Bar</option>
+        <option value="Butterfinger">Butterfinger</option>
+        <option value="Candy_Corn">Candy Corn</option>
+        <option value="Chiclets">Chiclets</option>
+        <option value="Dots">Dots</option>
+        <option value="Fuzzy_Peaches">Fuzzy Peaches</option>
+        <option value="Good_N_Plenty">Good N Plenty</option>
+        <option value="Gummy_Bears_Straight_Up">Gummy Bears</option>
+        <option value="Healthy_Fruit">Healthy Fruit</option>
+        <option value="Heath_Bar">Heath Bar</option>
+        <option value="Hersheys_Dark_Chocolate">Hersheys Dark Chocolate</option>
+        <option value="Hersheys_Milk_Chocolate">Herseys Milk Chocolate</option>
+        <option value="Hersheys_Kisses">Hersheys Kisses</option>
+        <option value="Jolly_Rancher_Bad_Flavor">Jolly Rancher Bad Flavors</option>
+        <option value="Jolly_Ranchers_Good_Flavor">Jolly Ranchers Good Flavors</option>
+        <option value="Junior_Mints">Junior Mints</option>
+        <option value="Kit_Kat">Kit Kat</option>
+        <option value="LaffyTaffy">LaffyTaffy</option>
+        <option value="LemonHeads">Lemonheads</option>
+        <option value="Licorice_Not_Black">Non Black Licorice</option>
+        <option value="Licorice_Yes_Black">Black Licorice</option>
+        <option value="Lollipop">Lollipop</option>
+        <option value="Mike_and_Ike">Mike and Ike</option>
+        <option value="Milk_Duds">Milk Duds</option>
+        <option value="Milky_Way">Milky Way</option>
+        <option value="Regular_M_Ms">Regular M&Ms</option>
+        <option value="Peanut_M_M_s">Peanut M&Ms</option>
+        <option value="Mint_Kisses">Mint Kisses</option>
+        <option value="Mr_Goodbar">Mr. Goodbar</option>
+        <option value="Nerds">Nerds</option>
+        <option value="Nestle_Crunch">Nestle Crunch</option>
+        <option value="Peeps">Peeps</option>
+        <option value="Pixy_Stix">Pixy Stix</option>
+        <option value="Reeses_Peanut_Butter_Cups">Reeses Peanut Butter Cups</option>
+        <option value="Reeses_Pieces">Reeses_Pieces</option>
+        <option value="Rolos">Rolos</option>
+        <option value="Skittles">Skittles</option>
+        <option value="Snickers">Snickers</option>
+        <option value="Sourpatch_Kids_ie_abominations_of_nature">Sourpatch Kids</option>
+        <option value="Starburst">Starburst</option>
+        <option value="Swedish_Fish">Swedish Fish</option>
+        <option value="Tic_Tacs">Tic Tacs</option>
+        <option value="Three_Musketeers">Three Musketeers</option>
+        <option value="Tolberone_something_or_other">Toblerone</option>
+        <option value="Trail_Mix">Trail Mix</option>
+        <option value="Twix">Twix</option>
+        <option value="Whatchamacallit_Bars">Whatchamacalit Bars</option>
+        <option value="York_Peppermint_Patties">York Peppermint Patties</option>
+      </select>
+    </div>
+
+    <script src="treemap.js"></script>
+
+    <div id = "crystalball">
+      <h2> The Prevalence of Alcohol in Candy Opinions </h2>
+
+      <div>
+        <label>Type a search term to read a comment:</label>
+        <input type = "text"
+           id = "searchterm"
+           value = "" />
+      </div>
+
+      <div id = "results">
+        <!-- <input type = "textarea" /> -->
+      </div>
+
+    </div>
+
+    <script src="crystalball.js"></script>
+
+
+
+
 
 </body>
 
