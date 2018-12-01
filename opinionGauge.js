@@ -46,6 +46,7 @@ count = {}
 
 var menu = d3.select("#fill")
     .append("select")
+    .attr("id", "opinionSelect")
     .selectAll("option")
     .data(candies)
     .enter()
@@ -56,15 +57,8 @@ var menu = d3.select("#fill")
         .text(function(d) {
             return d;
         })
-        .on("change", function() {
-            gauge.update(20);
-            // value = this.property("value");
-            // data.get(function(error, rows) {
-            //     rows.forEach(function(obj) {
-            //         count[obj.value] = (count[obj.value]||0) + 1;
-            //     })
-            // })
-            // updateGauge(count[3]);
+        .on("change", function(d) {
+            
         });
 
 
@@ -82,9 +76,17 @@ var buttonGroups= allButtons.selectAll("g.button")
                 .enter()
                 .append("g")
                 .attr("class","button")
+                .attr("id", function(d) {
+                    return d;
+                })
                 .style("cursor","pointer")
                 .on("click",function(d,i) {
-
+                    candy = d3.select('#opinionSelect').property('value');
+                    console.log(candy);
+                    console.log(d);
+                    console.log(data);
+                    amount = 20;
+                    gauge.update(amount);
                 })
                 .on("mouseover", function() {
                     if (d3.select(this).select("rect").attr("fill") != pressedColor) {
